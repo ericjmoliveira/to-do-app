@@ -60,7 +60,18 @@ function App() {
                 ) : (
                     <ul>
                         {tasksList.map((task) => (
-                            <li className={task.isCompleted && 'completed'} key={task.id}>
+                            <li
+                                style={
+                                    task.isCompleted
+                                        ? {
+                                              textDecoration: 'line-through',
+                                              backgroundColor: 'gray',
+                                              transition: '0.25s'
+                                          }
+                                        : {}
+                                }
+                                key={task.id}
+                            >
                                 <span>{task.description}</span>
                                 <div className="actions-container">
                                     <button
