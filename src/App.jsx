@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { nanoid } from 'nanoid';
-import { FaCheck, FaTrashAlt } from 'react-icons/fa';
+import { FaCheck, FaTrashAlt, FaUndo } from 'react-icons/fa';
 
 import './App.css';
 
@@ -78,7 +78,7 @@ function App() {
                                         className="actions-complete"
                                         onClick={() => handleComplete(task.id)}
                                     >
-                                        <FaCheck />
+                                        {task.isCompleted ? <FaUndo /> : <FaCheck />}
                                     </button>
                                     <button
                                         className="actions-delete"
